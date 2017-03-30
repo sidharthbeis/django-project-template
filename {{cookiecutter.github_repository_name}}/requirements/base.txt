@@ -1,0 +1,22 @@
+{% if cookiecutter.use_celery == "y" %}
+celery==4.0.2
+{% endif %}
+Django==1.10.5
+{% if cookiecutter.use_django_rest_framework_for_apis == "y" %}
+django-filter==1.0.0
+django-rest-swagger==2.1.0
+djangorestframework==3.5.3
+{% endif %}
+whitenoise==3.2.2
+dj-database-url==0.4.1
+dj-email-url==0.0.10
+{% if cookiecutter.db_type == 'postgres' %}
+psycopg2==2.6.2
+{% endif %}
+{% if cookiecutter.db_type == 'mysql' %}
+MySQL-python==1.2.5
+{% endif %}
+{% if cookiecutter.use_redis == 'y' %}
+django-redis==4.7.0
+redis>=2.10.5
+{% endif %}

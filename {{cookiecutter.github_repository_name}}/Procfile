@@ -1,0 +1,5 @@
+web: gunicorn {{cookiecutter.project_name}}.wsgi
+{% if cookiecutter.use_celery == "y" -%}
+worker: celery worker --app={{cookiecutter.project_name}}.taskapp --loglevel=info
+{%- endif %}
+
